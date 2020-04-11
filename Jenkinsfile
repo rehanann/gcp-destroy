@@ -23,7 +23,8 @@ pipeline {
         }
         stage('TF Apply') {
                 steps {
-                    sh 'terraform destroy'
+                    sh 'terraform init'
+                    sh 'terraform destroy myplan'
             }
         }
     }
